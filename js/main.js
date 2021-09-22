@@ -20,7 +20,7 @@ gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 10, ease: "line
   const loopAnim = gsap.to(".spinner", {
     rotation: "+=360", 
     ease: "none", 
-    duration: 5, 
+    duration: 50, 
     onComplete: () => {
       if(ready) {
         stopAnim.play();
