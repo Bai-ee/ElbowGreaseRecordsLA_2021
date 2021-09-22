@@ -1,5 +1,6 @@
 console.log(gsap);
 
+
 const tlMaster = gsap.timeline();
 
 tlMaster.to("#stageBlock", {duration:1, autoAlpha:0},1);
@@ -7,10 +8,14 @@ tlMaster.to("#stageBlock", {duration:1, autoAlpha:0},1);
 const startAnim = gsap.to(".spinner", {
     rotation: "+=360", 
 
-    // ease: "power1.in", 
+    ease: "power1.in", 
     duration: 0.5, 
     onComplete: () => loopAnim.play() 
   });
+
+
+gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 10, ease: "linear"});
+
   
   const loopAnim = gsap.to(".spinner", {
     rotation: "+=360", 
@@ -39,7 +44,7 @@ const startAnim = gsap.to(".spinner", {
 // let currentScroll = 0;
 // let isScrollingDown = true;
 
-let tween = gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 10, ease: "linear"}).totalProgress(0.5);
+
 
 // gsap.set(".marquee__inner", {xPercent: -50});
 
