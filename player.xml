@@ -1,0 +1,24 @@
+ <playlist>
+      <slide>
+        <file>images/Evening_1024.jpg</file>
+        <thumbnail>images/Evening_256.jpg</thumbnail>
+       <title>Trees</title>
+       <link><![CDATA[http://html5box.com]]></link>
+       <linktarget>_blank</linktarget>
+     </slide>
+     <slide>
+      <file>images/Big_Buck_Bunny_1.m4v</file>
+      <thumbnail>images/Big_Buck_Bunny_1.jpg</thumbnail>
+      <title>Big Buck Bunny</title>
+    </slide>
+    <slide>
+       <file>http://www.youtube.com/embed/YE7VzlLtp-4</file>
+        <thumbnail>http://img.youtube.com/vi/YE7VzlLtp-4/2.jpg</thumbnail>
+       <title>Big Buck Bunny - YouTube</title>
+    </slide>
+    <slide>
+       <file>https://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0</file>
+        <thumbnail>images/Big_Buck_Bunny_3.jpg</thumbnail>
+       <title>Big Buck Bunny - Vimeo</title>
+    </slide>
+</playlist>
