@@ -4,7 +4,7 @@ console.log(gsap);
 const tlMaster = gsap.timeline();
 
 tlMaster.to("#stageBlock", {duration:1, autoAlpha:0},1);
-tlMaster.from("#section", {duration:0.5, autoAlpha:0, y:"+=20px", ease:Back.easeOut },1.44)
+tlMaster.from("#section", {duration:0.5, autoAlpha:0, y:"+=100px", ease:Back.easeOut },1.24)
 
 
 const startAnim = gsap.to(".spinner", {
