@@ -279,6 +279,7 @@ textarea {
 }
 
 .marquee {
+  display: flex;
   background: #000000;
   border: #fff;
   border-block-start: solid;
@@ -287,19 +288,25 @@ textarea {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.667vw;
-  padding: 32px 0;
+  padding: 0px 0;
+  height: 50px;
   position: relative;
   overflow: hidden;
   bottom: 0;
   position: absolute;
+  border-bottom: solid 1px;
+  border-top: solid 1px;
+  border-color: white;
 }
 
 .marquee__inner {
   -webkit-font-smoothing: antialiased;
-    width: fit-content;
-    display: flex;
-    flex: auto;
-    flex-direction: row;
+
+  width: fit-content;
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  align-items: center;
 }
 
 .spacer {
@@ -500,3 +507,31 @@ a {
   pointer-events: auto;
   transition: 1s;
 }
+
+.spinner {
+  max-width:400px;
+  max-height:400px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-color: black;
+  border-bottom: solid 1px;
+  border-top: solid 1px;
+  border-color: white;
+  display: flex !important;
+  flex-direction: row ;
+  min-height: 50px;
+  width: 100vw;
+  position: fixed;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+  color:white !important;
+  font-size: 1.667vw;
+}
+
