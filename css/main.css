@@ -22,7 +22,6 @@ html {
 body {
 
   background: #000000;  /* fallback for old browsers */
-
   height:100vh;
   overflow:hidden;
   display: flex;
@@ -30,6 +29,7 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
+  overflow: visible;
 }
 
 
@@ -186,11 +186,7 @@ textarea {
   clear: both;
 }
 
-#section{
-  /* flex-direction:column;  */
-  /* margin-top:-50vh; */
-  justify-content: center;
-}
+
 
 
 /* ==========================================================================
@@ -307,7 +303,7 @@ textarea {
   position: relative;
   overflow: hidden;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   border-bottom: solid 1px;
   border-top: solid 1px;
   border-color: white;
@@ -550,7 +546,47 @@ input {
 
 
 
-
+#section {
+    flex-direction:row; 
+    /* margin-top:-50vh; */
+    overflow:visible;
+    width:100vw;
+    height:auto;
+    /* max-height:200vh; */
+    max-width:100vw;
+    overflow:visible;
+    /* top:-80px; */
+    /* justify-content: flex-start; */
+      /* flex-direction:column;  */
+      /* margin-top:-50vh; */
+      justify-content: center;
+      background-color:transparent;
+      width:100%; 
+      max-width:90vw; 
+      margin-top:0px;
+      outline: 0.15px solid transparent;
+      overflow: hidden; 
+      justify-content: center; 
+      align-content:center; 
+      position:absolute;
+      background-color: transparent;
+      width: 100%;
+      max-width: 90vw;
+      margin-top: 0px;
+      outline: transparent solid 0.15px;
+      overflow: visible;
+      display: flex;
+      place-content: center;
+      position: absolute;
+      transform: translate(0px, 0px);
+      opacity: 1;
+      visibility: inherit;
+      justify-content: center;
+      align-items: center;
+      /* background-color:red; */
+      height:auto;
+      overflow:visible;
+}
 
 
 
@@ -611,6 +647,8 @@ input {
 }
 
 .spinner {
+  height:400px;
+  width:400px;
   max-width:400px;
   max-height:400px;
   background-size: contain;
@@ -653,6 +691,7 @@ a {
     /* margin-top:-50vh; */
     overflow:visible;
     width:100vw;
+    /* height:200vh; */
     max-width:100vw;
     overflow:visible;
     /* top:-80px; */
@@ -661,6 +700,7 @@ a {
 
   .spinner {
     width:230px;
+    height:230px;
     max-width:230px;
     max-height:230px;
   }
@@ -687,6 +727,10 @@ a {
     }
 
     .marquee {
+      display:none;
+    }
+    
+    #section {
       display:none;
     }
 
