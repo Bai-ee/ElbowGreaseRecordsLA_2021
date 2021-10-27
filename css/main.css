@@ -654,6 +654,8 @@ input {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 nav {
@@ -694,6 +696,7 @@ a {
     /* height:200vh; */
     max-width:100vw;
     overflow:visible;
+    display:none;
     /* top:-80px; */
     /* justify-content: flex-start; */
   }
