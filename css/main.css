@@ -189,7 +189,9 @@ textarea {
 #section{
   /* flex-direction:column;  */
   /* margin-top:-50vh; */
+  justify-content: center;
 }
+
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -354,18 +356,14 @@ a {
 	text-decoration: none;
 }
 
-#
-element.style {
+#element.style {
 }
+
 #mc_embed_signup form {
     display: block;
     position: relative;
     text-align: left;
-    padding: 10
-px
- 0 10
-px
- 3%;
+    padding: 10px 0px 10px 3%;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -652,7 +650,24 @@ a {
 
   #section {
     flex-direction:column; 
-    margin-top:-50vh;
+    /* margin-top:-50vh; */
+    overflow:visible;
+    width:100vw;
+    max-width:100vw;
+    overflow:visible;
+    top:-80px;
+    /* justify-content: flex-start; */
+  }
+
+  .spinner {
+    width:230px;
+    max-width:230px;
+    max-height:230px;
+  }
+
+  #mc_embed_signup {
+    /* width: 150px !important; */
+    /* max-width:85vw !important; */
   }
 
 }
@@ -674,6 +689,7 @@ a {
     .marquee {
       display:none;
     }
+
 
 
 }
