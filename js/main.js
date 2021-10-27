@@ -22,7 +22,7 @@ gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 10, ease: "line
   const loopAnim = gsap.to(".spinner", {
     rotation: "+=360", 
     ease: "none", 
-    duration: 50, 
+    duration: 25, 
     onComplete: () => {
       if(ready) {
         stopAnim.play();
@@ -37,13 +37,13 @@ gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 10, ease: "line
   
   const endRot = 180;
   
-  const stopAnim = gsap.to(".spinner", {
-    rotation: `+=${360 + endRot}`,
-    duration: 0.6,
-    paused: true
-  });
+//   const stopAnim = gsap.to(".spinner", {
+//     rotation: `+=${360 + endRot}`,
+//     duration: 0.6,
+//     paused: true
+//   });
 
-// let currentScroll = 0;
+// // let currentScroll = 0;
 // let isScrollingDown = true;
 
 
