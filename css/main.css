@@ -583,6 +583,7 @@ input {
       visibility: inherit;
       justify-content: center;
       align-items: center;
+      align-content: center;
       /* background-color:red; */
       height:auto;
       overflow:visible;
@@ -677,11 +678,9 @@ nav {
 a {
   color:white !important;
   font-size: 1.667vw;
-  
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {    
-
   a {
     font-size: 13px;
   }
@@ -726,4 +725,6 @@ a {
   }
 
 }
+
+
 
