@@ -6,16 +6,17 @@
   "license": "",
   "author": "",
   "scripts": {
-    "start": "serve",
-    "build": "echo 'No build step needed - static site'",
-    "dev": "parcel index.html --open",
+    "dev": "serve",
+    "build": "cp -r css js img *.{html,ico,png,webmanifest} dist/",
+    "start": "serve dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "serve": "^14.2.1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "copyfiles": "^2.4.1"
   },
   "engines": {
     "node": ">=14.0.0"
