@@ -1,78 +1,49 @@
-console.log(gsap);
-
-
+// Initialize GSAP timeline for page load animation
 const tlMaster = gsap.timeline();
 
-tlMaster.to("#stageBlock", {duration:1, autoAlpha:0},1);
-tlMaster.from("#section", {duration:0.5, autoAlpha:0, y:"+=100px", ease:Back.easeOut },1.24)
+// Fade in animations
+tlMaster
+  .to("#stageBlock", { duration: 1, autoAlpha: 0 }, 1)
+  .from("#section", { duration: 0.5, autoAlpha: 0, y: "+=100px", ease: Back.easeOut }, 1.24);
 
-
+// Logo spinner animation
 const startAnim = gsap.to(".spinner", {
-    rotation: "+=360", 
+  rotation: "+=360",
+  ease: "power1.in",
+  duration: 0.5,
+  onComplete: () => loopAnim.play()
+});
 
-    ease: "power1.in", 
-    duration: 0.5, 
-    onComplete: () => loopAnim.play() 
+// Continuous logo spin
+const loopAnim = gsap.to(".spinner", {
+  rotation: "+=360",
+  ease: "none",
+  duration: 25,
+  repeat: -1,
+  paused: true
+});
+
+// Initialize marquee
+function initMarquee() {
+  const marqueeTrack = document.querySelector('.marquee-track');
+  const marqueeContent = document.querySelector('.marquee-content');
+  
+  // Create the infinite scroll animation
+  gsap.to(marqueeTrack, {
+    x: `-${marqueeContent.offsetWidth}`,
+    duration: 20,
+    ease: "none",
+    repeat: -1,
+    // Ensure smooth looping
+    onComplete: () => gsap.set(marqueeTrack, { x: 0 }),
+    onRepeat: () => gsap.set(marqueeTrack, { x: 0 })
   });
+}
 
-
-gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 10, ease: "linear"});
-
-  
-  const loopAnim = gsap.to(".spinner", {
-    rotation: "+=360", 
-    ease: "none", 
-    duration: 25, 
-    onComplete: () => {
-      if(ready) {
-        stopAnim.play();
-      } else {
-        loopAnim.play(0);
-      }
-    },
-    paused: true
-  });
-  
-  let ready = false;
-  
-  const endRot = 180;
-  
-//   const stopAnim = gsap.to(".spinner", {
-//     rotation: `+=${360 + endRot}`,
-//     duration: 0.6,
-//     paused: true
-//   });
-
-// // let currentScroll = 0;
-// let isScrollingDown = true;
-
-
-
-// gsap.set(".marquee__inner", {xPercent: -50});
-
-// window.addEventListener("scroll", function(){
-  
-//   if ( window.pageYOffset > currentScroll ) {
-//     isScrollingDown = true;
-//   } else {
-//     isScrollingDown = false;
-//   }
-   
-//   gsap.to(tween, {
-//     timeScale: isScrollingDown ? 1 : -1
-//   });
-  
-//   currentScroll = window.pageYOffset
-// });
-
-
-
-
-
-
-
-
-
+// Initialize everything when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  initMarquee();
+});
 
 $num = $('.my-card').length;
 $even = $num / 2;
@@ -105,7 +76,6 @@ $('.my-card').click(function() {
   $(this).prev().addClass('prev');
   $(this).next().addClass('next');
 });
-
 
 // Keyboard nav
 $('html body').keydown(function(e) {

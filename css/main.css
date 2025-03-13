@@ -7,700 +7,317 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-
-  font-size: 1em;
-  line-height: 1.4;
-  font-weight: 600;
-  
+/* Main styles */
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 body {
-
-  background: #000000;  /* fallback for old browsers */
-  height:100vh;
-  overflow:hidden;
+  background: #000000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  overflow: visible;
+  color: white;
 }
 
-
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
+/* Selection styles */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+/* Base element styles */
+img, iframe {
   vertical-align: middle;
+  max-width: 100%;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+/* Navigation */
+nav {
   margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
- * Extends the .sr-only class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-
-
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
-
-
-.marquee__part {
-  flex-shrink: 0;
-  padding: 0 4px;
-  font-smooth: always;
-}
-
-.marquee {
+  background-color: black;
+  border-bottom: solid 1px white;
+  border-top: solid 1px white;
   display: flex;
-  background: #000000;
-  border: #fff;
-  border-block-start: solid;
-  border-width: 1px;
-  color: #EEE;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.667vw;
-  padding: 0px 0;
   height: 50px;
-  position: relative;
-  overflow: hidden;
-  bottom: 0;
-  position: fixed;
-  border-bottom: solid 1px;
-  border-top: solid 1px;
-  border-color: white;
-}
-
-.marquee__inner {
-  -webkit-font-smoothing: antialiased;
-
-  width: fit-content;
-  display: flex;
-  flex: auto;
-  flex-direction: row;
-  align-items: center;
-}
-
-.spacer {
-  height: 150px;
-}
-
-h1 {
-	color: #fff;
-	text-align: center
-}
-
-ul {
-	list-style:none;
-	margin: 0 auto;
-	padding: 0;
-	display: block;
-	max-width: 780px;
-	text-align: center;
-}
-
-ul li {
-	display: inline-block;
-	padding: 8px;
-	background:white;
-	margin:10px;
-}
-
-ul li img {
-	display: block;
-}
-
-a {
-	text-decoration: none;
-}
-
-#element.style {
-}
-
-#mc_embed_signup form {
-    display: block;
-    position: relative;
-    text-align: left;
-    padding: 10px 0px 10px 3%;
-}
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-* {
-    box-sizing: border-box;
-}
-user agent stylesheet
-form {
-    display: block;
-    margin-top: 0em;
-}
-#mc_embed_signup{
-  background-color: black !important;
-    clear: both;
-    background-color: #aaa;
-    border: 0 none;
-    border-radius: 4px;
-    letter-spacing: .03em;
-    color: yellow;
-    cursor: pointer;
-    display: inline-block !important;
-    font-size: 15px;
-    height: 32px;
-    line-height: 32px;
-    margin: 0 5px 10px 0;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: top;
-    white-space: nowrap;
-    width: auto;
-    transition: all 0.23s ease-in-out 0s;
-    border: solid 1px white;
-    width: 400px !important;
-    max-width:90vw !important;
-    border-radius:0px !important;
-    height: auto;
-    padding-top:15px;
-
-}
-
-#player {
-  height:110px;
-}
-
-#mc_embed_signup_scroll, #mc-embedded-subscribe-form{
-  display: flex  !important;
-  flex-direction: row  !important;
-  align-items: center  !important;
-  color: white  !important;
-  border-color: white  !important;
-  border-radius: solid 4px !important;
-  justify-content: center;
-}
-
-#mce-EMAIL {
-  color:white;
-  padding;right:8px;
-}
-
-input {
-  border: 1px solid #fff;
-  background-color:black;
-  color:white;
-  border-radius:0px
-}
-
-
-.mc-embedded-subscribe {
-  border: 1px solid #fff !important;
-  background-color:black !important;
-  color:white !important;
-  border-radius:0px !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Make the images invisible by default */
-.Containers {
-  display: none;
-}
-
-/* forward & Back buttons */
-.Back, .forward {
-  cursor: pointer;
-  position: absolute;
-  top: 48%;
-  width: auto;
-  margin-top: -23px;
-  padding: 17px;
-  color: grey;
-  font-weight: bold;
-  font-size: 19px;
-  transition: 0.4s ease;
-  border-radius: 0 5px 5px 0;
-  user-select: none;
-}
-
-/* Place the "forward button" to the right */
-.forward {
-  right: 0;
-  border-radius: 4px 0 0 4px;
-}
-
-/*when the user hovers,add a black background with some little opacity */
-.Back:hover, .forward:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption Info */
-.Info {
-  color: #e3e3e3;
-  font-size: 16px;
-  padding: 10px 14px;
-  position: absolute;
-  bottom: 10px;
   width: 100%;
-  text-align: center;
-}
-
-/* Worknumbering (1/3 etc) */
-.MessageInfo {
-  color: #f2f2f3;
-  font-size: 14px;
-  padding: 10px 14px;
-  position: absolute;
+  position: fixed;
   top: 0;
+  z-index: 9999;
 }
 
-/* The circles or bullets and indicators */
-.dots {
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  margin: 0 3px;
-  background-color: #acc;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.5s ease;
+nav .nav-links {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.enable, .dots:hover {
-  background-color: #717161;
+nav a {
+  color: white;
+  font-size: 1.667vw;
+  text-decoration: none;
+  padding: 10px;
 }
 
-/* Faint animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.4s;
-  animation-name: fade;
-  animation-duration: 1.4s;
+nav a:hover {
+  color: #ddd;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .5}
-  to {opacity: 2}
-}
-
-@keyframes fade {
-  from {opacity: .5}
-  to {opacity: 2}
-}
-
-
-
+/* Main content section */
 #section {
-    flex-direction:row; 
-    /* margin-top:-50vh; */
-    overflow:visible;
-    width:100vw;
-    height:auto;
-    /* max-height:200vh; */
-    max-width:100vw;
-    overflow:visible;
-    /* top:-80px; */
-    /* justify-content: flex-start; */
-      /* flex-direction:column;  */
-      /* margin-top:-50vh; */
-      justify-content: center;
-      background-color:transparent;
-      width:100%; 
-      max-width:90vw; 
-      margin-top:0px;
-      outline: 0.15px solid transparent;
-      overflow: hidden; 
-      justify-content: center; 
-      align-content:center; 
-      position:absolute;
-      background-color: transparent;
-      width: 100%;
-      max-width: 90vw;
-      margin-top: 0px;
-      outline: transparent solid 0.15px;
-      overflow: visible;
-      display: flex;
-      place-content: center;
-      position: absolute;
-      transform: translate(0px, 0px);
-      opacity: 1;
-      visibility: inherit;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      /* background-color:red; */
-      height:auto;
-      overflow:visible;
+  flex: 1;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 70px 20px 70px;
 }
 
+/* Logo spinner */
+.spinner-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
+.spinner {
+  width: min(40vw, 500px);
+  height: min(40vw, 500px);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-
-
-.card-carousel {
+/* Content container */
+.content-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  height: 100%;
+}
+
+/* Card carousel */
+.card-carousel {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .card-carousel .my-card {
   height: 280px;
-  /* max-width:80vw; */
-  min-width:320px;
+  min-width: 320px;
   position: relative;
   z-index: 1;
-  -webkit-transform: scale(0.6) translateY(-2rem);
   transform: scale(0.6) translateY(-2rem);
   opacity: 0;
   cursor: pointer;
   pointer-events: none;
-  background: #000000;
   background: linear-gradient(to top, #000000, #080808);
   transition: 1s;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
 .card-carousel .my-card:after {
   content: '';
   position: absolute;
   height: 2px;
+  width: 100%;
   border-radius: 100%;
   background-color: rgba(0,0,0,0.3);
   bottom: -5rem;
-  -webkit-filter: blur(4px);
   filter: blur(4px);
 }
 
 .card-carousel .my-card.active {
   z-index: 3;
-  -webkit-transform: scale(1) translateY(0) translateX(0);
-  transform: scale(1) translateY(0) translateX(0);
+  transform: scale(1) translateY(0);
   opacity: 1;
   pointer-events: auto;
-  transition: 1s;
 }
 
-.card-carousel .my-card.prev, .card-carousel .my-card.next {
+.card-carousel .my-card.prev,
+.card-carousel .my-card.next {
   z-index: 2;
-  -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
-  transform: scale(0.8) translateY(-1rem) translateX(0);
+  transform: scale(0.8) translateY(-1rem);
   opacity: 0.6;
   pointer-events: auto;
-  transition: 1s;
 }
 
-.spinner {
-  height:400px;
-  width:400px;
-  max-width:400px;
-  max-height:400px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* margin-left:auto;
-  margin-right:auto; */
+/* Mailchimp form */
+#mc_embed_signup {
+  width: 100%;
+  background-color: black !important;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease;
 }
 
-nav {
-  background-color: black;
-  border-bottom: solid 1px;
-  border-top: solid 1px;
+#mc_embed_signup:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+#mc_embed_signup form {
+  text-align: left;
+  padding: 0;
+}
+
+#mc_embed_signup label {
+  color: white;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+#mc_embed_signup input.email {
+  width: 100%;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.375rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+#mc_embed_signup input.email:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+#mc_embed_signup input.email:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+#mc_embed_signup input.email::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#mc-embedded-subscribe {
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#mc-embedded-subscribe:hover {
+  background-color: white;
+  color: black;
   border-color: white;
-  display: flex !important;
-  flex-direction: row ;
-  min-height: 50px;
-  width: 100vw;
+}
+
+#mc-embedded-subscribe:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+#mc-embedded-subscribe:active {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  transform: scale(0.98);
+}
+
+/* Marquee animation */
+.marquee-container {
   position: fixed;
-  justify-content: space-around;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #000000;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  overflow: hidden;
+  display: flex;
   align-items: center;
-  top:0px;
-  z-index: 9999;
 }
 
-a {
-  color:white !important;
-  font-size: 1.667vw;
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  will-change: transform;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {    
-  a {
-    font-size: 13px;
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+}
+
+.marquee-content span {
+  color: white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .marquee-content span {
+    font-size: 14px;
   }
+}
 
+/* Responsive adjustments */
+@media only screen and (max-width: 992px) {
   #section {
-    flex-direction:column; 
-    overflow:visible;
-    width:100vw;
-    max-width:100vw;
-    overflow:visible;
+    flex-direction: column;
+    padding: 80px 20px;
+    overflow-y: auto;
   }
 
   .spinner {
-    width:230px;
-    height:230px;
-    max-width:230px;
-    max-height:230px;
+    width: min(60vw, 300px);
+    height: min(60vw, 300px);
   }
 
-  #mc_embed_signup {
+  html, body {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .spinner-container,
+  .content-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  nav a {
+    font-size: 13px;
+  }
+
+  #mc_embed_signup input.email {
+    width: 100%;
   }
 }
 
@@ -720,11 +337,8 @@ a {
   /* Note: backdrop-filter has minimal browser support */
   }
 
-  .marquee {
+  .marquee-container {
     display:none;
   }
 
 }
-
-
-
