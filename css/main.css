@@ -289,15 +289,24 @@ nav a:hover {
 
 /* Responsive adjustments */
 @media only screen and (max-width: 992px) {
+  body {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
   #section {
     flex-direction: column;
-    padding: 80px 20px;
-    overflow-y: auto;
+    padding: 60px 15px 80px;
+    overflow-y: visible;
+    gap: 20px;
+    min-height: calc(100vh - 100px);
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .spinner {
-    width: min(60vw, 300px);
-    height: min(60vw, 300px);
+    width: min(50vw, 250px);
+    height: min(50vw, 250px);
   }
 
   html, body {
@@ -308,16 +317,144 @@ nav a:hover {
   .spinner-container,
   .content-container {
     width: 100%;
+    height: auto;
+  }
+
+  .spinner-container {
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .content-container {
+    flex: 0 0 auto;
+  }
+
+  .card-carousel {
+    gap: 15px;
+  }
+
+  #mc_embed_signup {
+    padding: 1rem;
+    margin-bottom: 10px;
   }
 }
 
 @media only screen and (max-width: 767px) {
+  nav {
+    height: 45px;
+  }
+
+  nav .nav-links {
+    padding: 0 10px;
+  }
+
   nav a {
-    font-size: 13px;
+    font-size: 11px;
+    padding: 8px 5px;
+  }
+
+  #section {
+    padding: 50px 10px 60px;
+    gap: 15px;
+  }
+
+  .spinner {
+    width: min(40vw, 180px);
+    height: min(40vw, 180px);
+  }
+
+  .spinner-container {
+    margin-bottom: 5px;
+  }
+
+  .card-carousel {
+    gap: 10px;
+  }
+
+  #mc_embed_signup {
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin-bottom: 8px;
+  }
+
+  #mc_embed_signup label {
+    font-size: 0.75rem;
+    margin-bottom: 0.4rem;
   }
 
   #mc_embed_signup input.email {
     width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  #mc-embedded-subscribe {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .marquee-container {
+    height: 40px;
+  }
+}
+
+/* Extra small mobile devices */
+@media only screen and (max-width: 480px) {
+  nav {
+    height: 40px;
+  }
+
+  nav a {
+    font-size: 10px;
+    padding: 6px 4px;
+  }
+
+  #section {
+    padding: 45px 8px 50px;
+    gap: 10px;
+  }
+
+  .spinner {
+    width: min(35vw, 150px);
+    height: min(35vw, 150px);
+  }
+
+  .spinner-container {
+    margin-bottom: 0;
+  }
+
+  .card-carousel {
+    gap: 8px;
+  }
+
+  #mc_embed_signup {
+    padding: 0.6rem;
+    margin-bottom: 6px;
+  }
+
+  #mc_embed_signup label {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  #mc_embed_signup input.email {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #mc-embedded-subscribe {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .marquee-container {
+    height: 35px;
+  }
+
+  .marquee-content span {
+    font-size: 12px;
   }
 }
 
